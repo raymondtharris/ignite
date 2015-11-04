@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"magna/magnaio"
-	"magna/magnauser"
-	"ignite/igniteconnect"
+
+	"github.com/ignite/igniteconnect"
+	"github.com/magna/magnaio"
+	"github.com/magna/magnauser"
 )
 
 var theUser magnauser.User
