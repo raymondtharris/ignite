@@ -45,6 +45,7 @@ func FormatQuery(queryInput string) {
 
 func sendQuery(formatedQuery string) {
 	req, _ := http.NewRequest("POST", "http://localhost:8080/query", nil)
+	//http.Post("http://localhost:8080/query", bodyType string, body io.Reader)
 	// change body to formatedQuery to be sent to magna
 	handleRequestResponse(req)
 }
