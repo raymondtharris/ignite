@@ -1,6 +1,7 @@
 package igniteconnect
 
 import (
+	"bytes"
 	"fmt"
 	"net"
 	"net/http"
@@ -44,12 +45,15 @@ func FormatQuery(queryInput string) {
 }
 
 func sendQuery(formatedQuery string) {
-	req, _ := http.NewRequest("POST", "http://localhost:8080/query", nil)
-	//http.Post("http://localhost:8080/query", bodyType string, body io.Reader)
-	// change body to formatedQuery to be sent to magna
-	handleRequestResponse(req)
+	jsonString := []byte(formatedQuery)
+	req, _ := http.NewRequest("POST", "http://localhost:8080/query", bytes.NewBuffer(jsonString))
+	req.Header.Set("Content-Type", "application/json")
+	hClient := http.Client{}
+	response, _ := hClient.Do(req)
+
+	handleRequestResponse(response)
 }
 
-func handleRequestResponse(req *http.Request) {
+func handleRequestResponse(req *http.Response) {
 
 }
