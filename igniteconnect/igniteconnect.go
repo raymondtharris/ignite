@@ -46,7 +46,7 @@ func ConnectToMagna() {
 func FormatQuery(queryInput string, aUser *magnauser.User) string {
 	//Cursory look at the query to strip out any text that might cause trouble with magna's implementation.
 	//combine queryInput and user data into a usable JSON string
-	queryString := `{"user":{ "name" :` + aUser.Name + `, "iDTag" : ` + strconv.Itoa(aUser.IDTag) + ` }, "queryString" : ` + queryInput + ` }`
+	queryString := `{"User":{ "Name" : "` + aUser.Name + `", "IDTag" : ` + strconv.Itoa(aUser.IDTag) + ` }, "queryString" : "` + queryInput + `" }`
 	fmt.Println(queryString)
 	return queryString
 }
