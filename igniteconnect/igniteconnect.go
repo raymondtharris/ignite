@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"old_magna/magna/magnauser"
 
 	"github.com/gorilla/websocket"
 )
@@ -40,8 +41,11 @@ func ConnectToMagna() {
 }
 
 //FormatQuery fixes any problems with the query for Magna
-func FormatQuery(queryInput string) {
+func FormatQuery(queryInput string, aUser *magnauser.User) string {
 	//Cursory look at the query to strip out any text that might cause trouble with magna's implementation.
+	//combine queryInput and user data into a usable JSON string
+	queryString := `{"query": ` + queryInput + `, "user":` + aUser.Name + `, "tag": ` + string(aUser.IDTag) + `}`
+	return queryString
 }
 
 func sendQuery(formatedQuery string) {
