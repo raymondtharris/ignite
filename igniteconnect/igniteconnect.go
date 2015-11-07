@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"net"
 	"net/http"
-	"old_magna/magna/magnauser"
+
+	"github.com/magna/magnauser"
 
 	"github.com/gorilla/websocket"
 )
@@ -48,7 +49,7 @@ func FormatQuery(queryInput string, aUser *magnauser.User) string {
 	return queryString
 }
 
-func sendQuery(formatedQuery string) {
+func SendQuery(formatedQuery string) {
 	jsonString := []byte(formatedQuery)
 	req, _ := http.NewRequest("POST", "http://localhost:8080/query", bytes.NewBuffer(jsonString))
 	req.Header.Set("Content-Type", "application/json")

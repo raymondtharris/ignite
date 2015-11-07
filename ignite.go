@@ -22,10 +22,12 @@ func prompt() {
 	fmt.Print("What would you like to know?\n")
 	promptString := magnaio.ReadInput()
 	fmt.Println(promptString)
+	str := igniteconnect.FormatQuery(promptString, &theUser)
+	igniteconnect.SendQuery(str)
 }
 
 func main() {
-	igniteconnect.ConnectToMagna()
+	//igniteconnect.ConnectToMagna()
 	intro()
 	prompt()
 }
