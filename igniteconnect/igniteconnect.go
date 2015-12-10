@@ -61,6 +61,6 @@ func SendQuery(formatedQuery string) {
 	handleRequestResponse(response)
 }
 
-func handleRequestResponse(req *http.Response) {
+func handleRequestResponse(resp *http.Response) {
 
 }
