@@ -14,7 +14,7 @@ func intro() {
 	fmt.Println("Who awakens me?")
 	dataString := magnaio.ReadInput()
 	//fmt.Println(dataString)
-	theUser = magnauser.User{dataString, 12290323094}
+	theUser = MakeNewUser(dataString)
 	fmt.Print("Hello " + theUser.Name + ". ")
 }
 
@@ -24,6 +24,11 @@ func prompt() {
 	fmt.Println(promptString)
 	str := igniteconnect.FormatQuery(promptString, &theUser)
 	igniteconnect.SendQuery(str)
+}
+
+func MakeNewUser(aName string) magnauser.User {
+	newUser := magnauser.User{aName, 1223124312342}
+	return newUser
 }
 
 func main() {

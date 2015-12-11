@@ -1,4 +1,4 @@
-package ignite_test
+package main
 
 import (
 	"fmt"
@@ -16,6 +16,8 @@ func TestNewUser(t *testing.T) {
 		"Zack Thack",
 	}
 	for _, name := range users {
-		fmt.Println(name)
+		//fmt.Println(name)
+		temp := MakeNewUser(name)
+		fmt.Println(temp)
 	}
 }
