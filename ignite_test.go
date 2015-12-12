@@ -21,3 +21,11 @@ func TestNewUser(t *testing.T) {
 		fmt.Println(temp)
 	}
 }
+
+func TestQuerySending(t *testing.T){
+
+}
+
+func TestSequenceing(t *testing.T){
+	
+}
