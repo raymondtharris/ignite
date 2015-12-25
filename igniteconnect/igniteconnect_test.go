@@ -1,4 +1,4 @@
-package main
+package igniteconnect_test
 
 import (
 	"fmt"
@@ -10,5 +10,5 @@ func TestMagnaConnection(t *testing.T){
 }
 
 func TestQueryFormatting(t *testing.T){
-  
+
 }
