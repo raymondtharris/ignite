@@ -1,4 +1,4 @@
-package main
+package ignite_test
 
 import (
 	"fmt"
@@ -27,5 +27,5 @@ func TestQuerySending(t *testing.T){
 }
 
 func TestSequenceing(t *testing.T){
-	
+
 }
